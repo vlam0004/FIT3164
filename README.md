@@ -1,2 +1,2 @@
-# covidDashboard---Copy
+# covidDashboard
  
