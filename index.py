@@ -4,7 +4,7 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
 
 from app import app
-from apps import dashboard, contact_tracing_graphs,home
+from apps import dashboard, contact_tracing_graphs,home, sirmodel
 
 # building the navigation bar
 # https://github.com/facultyai/dash-bootstrap-components/blob/master/examples/advanced-component-usage/Navbars.py
@@ -13,6 +13,7 @@ dropdown = dbc.DropdownMenu(
 dbc.DropdownMenuItem("Home", href="/apps/home"),
         dbc.DropdownMenuItem("Worldwide Visualisations", href="/apps/dashboard"),
         dbc.DropdownMenuItem("Country Wise Visualisations", href="/apps/contact_tracing_graphs"),
+dbc.DropdownMenuItem("SEIR Model", href="/apps/sirmodel")
     ],
     nav=True,
     in_navbar=True,
@@ -32,7 +33,7 @@ navbar = dbc.Navbar(
                     align="center",
                     no_gutters=True,
                 ),
-                href="/apps/dashboard",
+                href="/apps/home",
             ),
             dbc.NavbarToggler(id="navbar-toggler2"),
             dbc.Collapse(
@@ -79,6 +80,8 @@ def display_page(pathname):
         return dashboard.layout
     elif pathname == '/apps/contact_tracing_graphs':
         return contact_tracing_graphs.layout
+    elif pathname == '/apps/sirmodel':
+        return sirmodel.layout
     else:
         return home.layout
 

@@ -56,7 +56,7 @@ card3 = dbc.Card(
                     "make up the bulk of the card's content.",
                     className="card-text",
                 ),
-                dbc.Button("SIR model", color="primary", href='/apps/dashboard'),
+                dbc.Button("SIR model", color="primary", href='/apps/sirmodel'),
             ]
         ),
     ],
