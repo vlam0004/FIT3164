@@ -188,7 +188,8 @@ app.clientside_callback(
             layout = {
                         title: 'COVID 19',
                         template: 'plotly_dark',
-                        plot_bgcolor: '#000000'
+                        plot_bgcolor: '#000000',
+                        paper_bgcolor:"#FFF3"
                     };
             Plotly.newPlot('myDiv', data, layout);
             return [value[0], value[1]];
@@ -207,7 +208,8 @@ app.clientside_callback(
              layout = {
                         title: 'COVID 19',
                         template: 'plotly_dark',
-                        plot_bgcolor: '#000000'
+                        plot_bgcolor: '#000000',
+                        paper_bgcolor:"#FFF3"
                     };
             Plotly.newPlot('myDiv', data, layout);
             return [value[0], value[1]];
