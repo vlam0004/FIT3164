@@ -52,8 +52,8 @@ card3 = dbc.Card(
             [
                 html.H4("SIR model", className="card-title"),
                 html.P(
-                    "Some quick example text to build on the card title and "
-                    "make up the bulk of the card's content.",
+                    "The SEIR model allows you to visualize how COVID 19 "
+                    "progresses.",
                     className="card-text",
                 ),
                 dbc.Button("SIR model", color="primary", href='/apps/sirmodel'),
@@ -124,7 +124,10 @@ layout = html.Div([
     Input('serverside-interval', 'n_intervals'),
 )
 def update_cases(n_intervals):
-    return total_cases
+    data1 = 'https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv'
+    df1 = pd.read_csv(data1)
+    total_cases1 = df1.loc[df1.location == 'World', ['total_cases']].max()
+    return total_cases1
 
 
 @app.callback(
@@ -132,4 +135,7 @@ def update_cases(n_intervals):
     Input('serverside-interval2', 'n_intervals'),
 )
 def update_deaths(n_intervals):
-    return total_deaths
+    data3 = 'https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv'
+    df2 = pd.read_csv(data3)
+    total_deaths2 = df2.loc[df2.location == 'World', ['total_deaths']].max()
+    return total_deaths2
