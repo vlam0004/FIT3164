@@ -192,7 +192,7 @@ app.clientside_callback(
                         plot_bgcolor: 'rgb(17,17,17)',
                         font: {'color': '#f2f5fa'}
                     };
-            Plotly.newPlot('myDiv', data, layout);
+            Plotly.newPlot('myDiv', data, layout,{staticPlot: true});
             return [value[0], value[1]];
         } else {
             if (drag_value[1] != value[1]) {
@@ -213,7 +213,7 @@ app.clientside_callback(
                         plot_bgcolor: 'rgb(17,17,17)',
                         font: {'color': '#f2f5fa'}
                     };
-            Plotly.newPlot('myDiv', data, layout);
+            Plotly.newPlot('myDiv', data, layout,{staticPlot: true});
             return [value[0], value[1]];
         }
     }
